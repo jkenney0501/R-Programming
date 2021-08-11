@@ -153,22 +153,23 @@ example_list[[10]]<-c(8:10)
 
 
 # ------------------ Delete List Elements -----------------------------------
+# note: $ cant be used with numerical indexes
+example_list<-list(c('a','b','c'), array(1:10, dim = c(2,5)))
+example_list[[3]]<-c(1,2,3)
 
 
-
-
-
-
-
-
+# to remove, call index and use NULL
+example_list[[3]]<-NULL
+# now list of 9 rather than 10
 
 # ----------------- Combining Lists ----------------------------------------
+# create 2 lists
+my_list1<-list(c(1,2), 'A')
 
+my_list2<-list(c(10,11), matrix(1:10, nrow=5, ncol=2))
 
-
-
-
-
+concat_list <- c(my_list1, my_list2)
+# list of 4
 
 
 
@@ -181,11 +182,11 @@ example_list[[10]]<-c(8:10)
 #  1b. a vector with the elements (3,9,81)
 
 #  1c. a matrix with 2 rows and 2 columns with the elements (9,0,9,0)
-
+math <- list(array(1:2, dim=c(3,2)), c(1,9,81), matrix(9,0,9,0, nrow=2, ncol=2))
 
 
 # Name the elements on your math_list "ThreeDArray","Vector" and "Matrix"
-
+names(math)
 
 
 # Add a fourth element to your list - a character element with the text: "I DID IT!"
