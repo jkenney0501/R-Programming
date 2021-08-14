@@ -160,14 +160,177 @@ sapply(X=models, FUN = '[', n=1)
 # assign to the df 
 mtcars$brand <- sapply(X=models, FUN = '[', n=1)
 
+# using lapply to store as a list
+mtcars$brand <- lapply(X=models, FUN = '[', n=1)
+
 
 
 # ------------------ Aggregating and Sorting --------------------------------
+# using mtcars with brand var applied
+# aggregate data by brand - like a group by in SQL
+# inspect:
+?aggregate()
+
+class(mtcars$brand)
+
+# error is created if sapply was used bc lapply creates a list whereas sapply creates a char class
+# to solve the error, use "list()" and wrap the mtcars$brand
+hp_brands <- aggregate(
+  x=mtcars$hp,
+  by=list(mtcars$brand),
+  FUN=mean
+)
+
+# output class is a data frame, store in a new var hp_brands
+# change the column names to brand, mean_hp
+colnames(hp_brands)<-c('brand', 'mean_hp')
+
+
+# sort the table by mean - ascending which is the default
+hp_brands[order(hp_brands$mean_hp),]
+
+# to sort descending order by hp mean use minus before hp_brands -
+hp_brands[order(- hp_brands$mean_hp),]
+
+
+
 
 
 # ------------------ Merging Data Frames -----------------------------------
+# reload mtcars df with brand column
+data("mtcars")
+
+# we are adding the country of origin to the match the brand of the car
+# 1st create data frame with country of origin
+brand_origin <- data.frame(
+  brand = c('Mazda', 'Toyota', 'Fiat', 'Volvo', 'Skoda'),
+  country = c('Japan', 'Japan', 'Italy', 'Sweden', 'Czech Repuublic')
+)
+
+
+# to join use merge
+# inner join
+mtcars_origin <- merge(x=mtcars, y=brand_origin, by='brand')
+
+# left join -  use all.x, x is the left table
+mtcars_origin <- merge(x=mtcars, y=brand_origin, by='brand', all.x = TRUE)
+
+# right join - change all.x to all.y, y is the right table
+mtcars_origin_right <- merge(x=mtcars, y=brand_origin, by='brand', all.y = TRUE)
+
+# full join - everything from both tables -  change all = TRUE
+mtcars_origin_full <- merge(x=mtcars, y=brand_origin, by='brand', all = TRUE)
+
+
+
+# ---------------- Using SQL like Library ---------------------------------
+# install the package
+install.packages("sqldf")
+
+library(sqldf)
+
+sql_df < - sqldf('SELECT a.*, b.country
+                 FROM mtcars AS a
+                 LEFT JOIN brand_origin AS b 
+                 using(brand)'
+                 )
+
+
 
 # ------------------ Plotting overview -------------------------------------
+# Overview using R Base functions
+# use mtcars
+data("mtcars")
 
+# construct a scatter plot using plot function
+plot(x=mtcars$hp,y=mtcars$wt, main = 'Scatter Plot of HP vs. WT')
+
+
+# bar plot # using table function to aggregate
+count_cyl <- table(mtcars$cyl)
+
+barplot(count_cyl, 
+        main = 'Count of Cars by Cylinder', 
+        xlab = 'Number of Cylinders', 
+        ylab = 'Count of Cars',
+        col = c('darkred', 'green', 'orange'))
+
+# box plots 
+boxplot(hp~gear, data = mtcars, main = 'Boxplot of Hp vs. Gear')
+
+
+# Histograms-breaks widens or narrows your bars
+hist(x=mtcars$hp, col = c('green'), breaks = 20, main = 'Histogram of HP')
+
+
+# ------------------- Plots with ggplot -----------------------------------
+install.packages("ggplot2")
+library(ggplot2)
+
+# build a histogram w/ggplot
+ggplot(
+  data = mtcars,
+  aes(x=hp)
+) + geom_histogram(fill='salmon', color='black', binwidth = 20)
+
+# to change to a scatter plot, change the geom_hist to geom_point ad add y =
+ggplot(
+  data = mtcars,
+  aes(x=hp, y=wt)
+) + geom_point(color='salmon') + geom_smooth(method='lm', se=FALSE)
+
+
+
+
+# ------------------- Challenges ------------------------------------------
+# Load the longley data frame from R into your environment.
+
+
+
+# Check the first 5 rows of the data frame using an R command.
+
+
+
+# Check the structure of the longley data frame using an R command
+
+
+
+# Use the summary command to check the mean of the Unemployed variable.
+
+
+
+# Store the mean variable that was computed in the summary command and store it in a mean_unemployment object.
+
+
+
+# Using strsplit and list indexing extract the number that you see in the character variable mean_unemployment- rewrite the mean_unemployment object with it.
+
+
+
+# Convert the mean_unemployment into a numeric value.
+
+
+
+# Compute the mean of the unemployed variable in the longley data frame. Store it in an object called mean_unemployment_df
+
+
+
+# Check if the values in mean_unemployment  and mean_unemployment_df are the same.
+
+
+
+# Check the same as above but this time convert both objects to integer in the comparison.
+
+
+
+# Obtain the column names from the longley data frame. Store them in an object called columns
+
+
+
+# Compute a new column in the longley data frame called gnp_per_capita that consists of the ratio between GNP and Population.
+
+
+
+# Extract the median of GNP from longley data frame using apply and store it in a variable called gnp_median.
 
 
