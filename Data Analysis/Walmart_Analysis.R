@@ -1,5 +1,5 @@
 # load the Walmart data and feature files
-getwd()
+#getwd()
 
 walmart_data <- read.csv('./Desktop/R-Programming/Data Analysis/walmart_data.csv')
 
