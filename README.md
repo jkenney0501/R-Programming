@@ -1,5 +1,5 @@
 # R-Programming
-This repository is a demonstration of the various tools in R and to be used as a reference/guide. More is to be added in the future as it is accumulated. At some an additional folder will be added with the current R studio code converted to Jupyter notebooks (This has began already) for easier reference to the concepts and challenges for each section (for anyone that may want the practice). My goal to is to make a really good and simple reference for some common scenarios we use in data science. 
+This repository is a demonstration of the various tools in R and to be used as a reference/guide. More is to be added in the future as it is accumulated. At some point an additional folder will be added with the current R studio code converted to Jupyter notebooks (This has began already) for easier reference to the concepts and challenges for each section (for anyone that may want the practice). My goal to is to make a really good and simple reference for some common scenarios we use in data science but to get where I want it to be, it takes a little while!
 
 
 ## Table of Contents
