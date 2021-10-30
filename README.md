@@ -7,18 +7,18 @@ This repository is a demonstration of the various tools in R and to be used as a
 ### R Notebooks - Same as R Studio Code but output is provided.
 [R Notebooks](https://github.com/jkenney0501/R-Programming/tree/master/R-Notebooks)
 
-1.[Data Types](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Data%20Types%20Notebook%20in%20R.ipynb)
+1. [Data Types](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Data%20Types%20Notebook%20in%20R.ipynb)
  
-2.[Arrays](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Arrays%20in%20R%20Notebook.ipynb)
+2. [Arrays](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Arrays%20in%20R%20Notebook.ipynb)
  
-3.[Matrices](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Matrix%20Notebook%20in%20R.ipynb)
+3. [Matrices](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Matrix%20Notebook%20in%20R.ipynb)
  
-4.[Vectors](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Vectors%20in%20R%20Notebook%20Examples.ipynb)
+4. [Vectors](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Vectors%20in%20R%20Notebook%20Examples.ipynb)
 
-5.[Lists](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Lists%20Notebook%20in%20R.ipynb)
+5. [Lists](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Lists%20Notebook%20in%20R.ipynb)
  
-6.[Factors]()
+6. [Factors]()
  
-7.[Dataframes](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Dataframes%20Notebook%20in%20R.ipynb)
+7. [Dataframes](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Dataframes%20Notebook%20in%20R.ipynb)
  
-8.[Functions](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Functions-For-While-If-Else%20Notebook%20in%20R.ipynb) -  This section also contains some control flow examples with if/else and loops.
+8. [Functions](https://github.com/jkenney0501/R-Programming/blob/master/R-Notebooks/Functions-For-While-If-Else%20Notebook%20in%20R.ipynb) -  This section also contains some control flow examples with if/else and loops.
